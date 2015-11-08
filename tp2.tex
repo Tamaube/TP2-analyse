@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\title{TP2}
+\author{Benjamin Khenniche et Elisa Lescarret}
+\date{9 novembre 2015}
+
+\begin{document}
+
+\part{TP2 Analyse - Rendu de Benjamin Khenniche et Elisa Lescarret}
+\paragraph{}
+\section{Exercie 1}
+\subsection{Question 1}
+
+\paragraph{On prend $x_0$ le milieu de $[a; b]$ c'est à dire $x_0 = 1/2 (a + b)$
+$l$ se trouve donc dans un des deux intervalles $]a; x_0[$ ou $]x_0; b[$}
+
+\paragraph{D'après la méthode par dichotomie si $f(a)f(x_0) < 0$ alors $l \in ]a; x_0[$ on pose alors $a_1 = a$ $b_1 = x0$}
+\paragraph{Si $f(a)f(x_0) = 0$ alors $l = x_0$}
+\paragraph{Si $f(a)f(x_0) > 0$ alors $l \in ]x_0; b[$ On pose $a_1 = x_0$ $b_1 = b$}
+
+\paragraph{On pose ensuite $x_1 = 1/2(a_1 + b_1)$}
+\paragraph{On construit donc une suite $x_n = 1/2(a_n + b_n)$ tel que $|x_n - l| \le \frac{(b -a)}{2^{n+1}}$}
+
+\subsection{Question 2}
+
+\paragraph{Soit $e_n$ l'écart entre $x_n$ et $l$ On a donc $e_{n+1} = e_n/2$ testons si la méthode est d'ordre 1}
+\paragraph{On doit vérifier que $|e_{n+1}|/|e_n|$ converge quand $n \rightarrow +\infty$}
+					\[\lim\limits_{n \rightarrow +\infty}\frac{|e_{n + 1}|}{|e_n|} = \lim\limits_{n \rightarrow +\infty} \frac{|\frac{e_n}{2}|}{|e_n|} = \frac{1}{2}\]
+\paragraph{On vérifie pour l'ordre 2 si $\frac{|e_{n+1}|}{|e_n|^2}$ converge quand $n \rightarrow +\infty$}
+					\[\lim\limits_{n \rightarrow +\infty} \frac{|e_{n+1}|}{|e_n|^2} = \lim\limits_{n \rightarrow +\infty} \frac{|e_{n}|}{2|e_n|^2} = \lim\limits_{n \rightarrow +\infty} \frac{1}{2|e_n|} = +\infty \]
+\paragraph{$\frac{|e_{n+1}|}{|e_n|^2}$ diverge la méthode est donc d'ordre 1}
+
+\subsection{Question 3}
+\paragraph{Pour commencer l'algorithme il faut que $f(a)$ et $f(b)$ soit de signe opposés pour que $0 \in [f(a), f(b)]$ donc $f(a)f(b) < 0$}
+\paragraph{On a pour condition d'arrêt $|f(x_n)| \le \epsilon$}
+
+\section{Exercice 2}
+\subsection{Question 1}
+\paragraph{On a $\frac{y - f(a)}{x - a} = \frac{f(b) - f(a)}{b - a} \Rightarrow g(a) = \frac{af(b) - bf(a)}{f(b) - f(a)}$}
+\paragraph{On a donc}
+\[x_{n+1} = g(x_n) = \frac{x_nf(b) - bf(x_n)}{f(b) - f(a)}\]
+
+\subsection{Question 2}
+\paragraph{$f(a)$ et $f(b)$ sont de signes opposés pour que $0 \in [f(a), f(b)]$ donc $f(a)f(b) < 0$}
+\paragraph{Quand la convergence coupe l'axe en abscisse en $l$ cela correspond à $|x_{n + 1} - x_n| < \epsilon$}
+					
+
+\end{document}
